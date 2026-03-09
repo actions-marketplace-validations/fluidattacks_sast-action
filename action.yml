@@ -28,8 +28,12 @@ runs:
 
         if [[ "${GITHUB_EVENT_NAME}" == "pull_request" ]]; then
           echo "mode=diff" >> "${GITHUB_OUTPUT}"
-        else
+          echo "base_sha=${{ github.event.pull_request.base.sha }}" >> "${GITHUB_OUTPUT}"
+        elif [[ "${GITHUB_REF}" == "refs/heads/${GITHUB_EVENT_REPOSITORY_DEFAULT_BRANCH:-main}" || "${GITHUB_REF}" == "refs/heads/main" || "${GITHUB_REF}" == "refs/heads/master" || "${GITHUB_REF}" == "refs/heads/trunk" ]]; then
           echo "mode=full" >> "${GITHUB_OUTPUT}"
+        else
+          echo "mode=diff" >> "${GITHUB_OUTPUT}"
+          echo "base_sha=${{ github.event.before }}" >> "${GITHUB_OUTPUT}"
         fi
 
     - name: Get changed files
@@ -37,7 +41,7 @@ runs:
       id: changed
       uses: tj-actions/changed-files@v46
       with:
-        base_sha: ${{ github.event.pull_request.base.sha }}
+        base_sha: ${{ steps.resolve.outputs.base_sha }}
         separator: '\n'
 
     - name: Run scan

@@ -47,33 +47,28 @@ That's it. No inputs required.
 
 ## How it works
 
-The scan mode is determined automatically by the GitHub event that triggers the workflow:
+The scan mode is determined automatically based on branch and event:
 
-- **Push events** → **Full scan**: analyzes all paths defined in `sast.include`.
-- **Pull request events** → **Differential scan**: ignores `sast.include` and only analyzes the files changed in the PR.
+| Event | Branch | Mode |
+|---|---|---|
+| Push | `main` / `master` / `trunk` | Full scan |
+| Push | Any other branch | Differential scan (vs previous commit) |
+| Pull request | Any | Differential scan (vs PR base) |
 
-### Workflow examples
+This matches trunk-based development workflows out of the box:
 
-**Full scan on push to main + differential scan on PRs** (recommended):
+1. Developer creates branch from main
+2. Push to branch → **diff scan** (only changed files)
+3. Opens PR to main → **diff scan** (only changed files)
+4. Merge to main → **full scan** (all files in `sast.include`)
 
-```yaml
-on:
-  push:
-    branches: [main]
-  pull_request:
-```
-
-**Only differential scan on PRs:**
-
-```yaml
-on: [pull_request]
-```
-
-**Only full scan on every push:**
+### Workflow example
 
 ```yaml
-on: [push]
+on: [push, pull_request]
 ```
+
+That's all you need. The action handles the rest.
 
 ## Configuration
 
