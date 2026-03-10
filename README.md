@@ -1,6 +1,6 @@
 # Fluid Attacks SAST
 
-Free, open-source static application security testing (SAST) for your GitHub repositories. No account, API key, or registration required.
+Free, open-source static application security testing (SAST) action for your GitHub repositories. No account, API key, or registration required.
 
 ## Quick Start (2 minutes)
 
