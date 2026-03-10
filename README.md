@@ -157,7 +157,7 @@ sast:
 | `output.format` | Yes | — | Output format: `SARIF`, `CSV`, or `ALL` |
 | `sast.include` | Yes | — | List of paths to scan |
 | `sast.exclude` | No | — | List of paths to exclude |
-| `checks` | No | All | List of specific checks to run |
+| `checks` | No | All | List of specific [checks](https://db.fluidattacks.com/wek/) to run |
 
 ## Action outputs
 
@@ -244,5 +244,6 @@ If `strict: true` is set, the pipeline will fail whenever vulnerabilities are fo
 ## More information
 
 - [Source code on GitHub](https://github.com/fluidattacks/sast-action)
+- [Vulnerability database](https://db.fluidattacks.com)
 - [Fluid Attacks documentation](https://docs.fluidattacks.com)
 - [SARIF format specification](https://sarifweb.azurewebsites.net/)
