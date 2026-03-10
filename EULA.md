@@ -6,7 +6,7 @@
 
 ---
 
-**IMPORTANT — READ CAREFULLY:** This End User License Agreement ("Agreement") is a legal agreement between you (either an individual or a legal entity, hereinafter "You" or "User") and Fluid Attacks S.A.S. ("Fluid Attacks", "we", "us", or "our") for the use of the Scanner SAST product (the "Software"), available through GitHub Marketplace as a GitHub Action. By installing, copying, or otherwise using the Software, You agree to be bound by the terms of this Agreement. If You do not agree to the terms of this Agreement, do not install or use the Software.
+**IMPORTANT — READ CAREFULLY:** This End User License Agreement ("Agreement") is a legal agreement between you (either an individual or a legal entity, hereinafter "You" or "User") and Fluid Attacks ("Fluid Attacks", "we", "us", or "our") for the use of the Scanner SAST product (the "Software"), available through GitHub Marketplace as a GitHub Action. By installing, copying, or otherwise using the Software, You agree to be bound by the terms of this Agreement. If You do not agree to the terms of this Agreement, do not install or use the Software.
 
 ---
 
@@ -140,6 +140,6 @@ This Agreement shall be governed by and construed in accordance with the laws of
 
 For questions, concerns, or data deletion requests regarding this Agreement or the Software, please contact:
 
-**Fluid Attacks S.A.S.**
+**Fluid Attacks**
 Email: help@fluidattacks.com
 Website: https://fluidattacks.com
