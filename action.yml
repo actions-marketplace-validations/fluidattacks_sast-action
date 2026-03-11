@@ -1,4 +1,4 @@
-name: 'fluidattacks-sast'
+name: 'Fluid Attacks SAST'
 description: 'Run static application security testing with Fluid Attacks scanner'
 author: 'Fluid Attacks'
 
